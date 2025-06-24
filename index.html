@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>CSSだけで非表示切替</title>
+  <style>
+    body{
+        background-color: aliceblue;
+    }
+    #toggle {
+      /* checkboxを目立たせず、でも操作可能にする */
+      position: absolute;
+      opacity: 0;
+      left: 0;
+    }
+    label[for="toggle"] {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #white-block {
+      width: 300px;
+      height: 200px;
+      background: white;
+      margin: 20px 0;
+      display: block;
+    }
+    /* チェックされたら非表示に */
+    #toggle:checked ~ #white-block {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="checkbox" id="toggle">
+  <label for="toggle">ボタン</label>
+
+  <div id="white-block">
+  </div>
+
+</body>
+</html>
